@@ -45,7 +45,7 @@ platform :ios, '9.0'
 Import into pubspec.yaml
 ```
 dependencies:
-  epub_viewer: latest_version
+  vocsy_epub_viewer: latest_version
 ```
 
 Note: Please add this to the release build type in your app build.gradle to avoid crashes on android release builds
