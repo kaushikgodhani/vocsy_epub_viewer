@@ -1,3 +1,7 @@
+## 0.0.7
+
+* Bug Fixed for Android
+
 ## 0.0.6
 
 * IOS ISSUE FIXED!!
