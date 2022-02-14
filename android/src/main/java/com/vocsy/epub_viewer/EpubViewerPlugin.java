@@ -29,7 +29,7 @@ public class EpubViewerPlugin implements MethodCallHandler, FlutterPlugin, Activ
   static BinaryMessenger messenger;
   static private EventChannel eventChannel;
   static private EventChannel.EventSink sink;
-  private static final String channelName = "epub_viewer";
+  private static final String channelName = "vocsy_epub_viewer";
 
   /** Plugin registration. */
   public static void registerWith(Registrar registrar) {
@@ -55,7 +55,7 @@ public class EpubViewerPlugin implements MethodCallHandler, FlutterPlugin, Activ
     });
 
 
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "epub_viewer");
+    final MethodChannel channel = new MethodChannel(registrar.messenger(), "vocsy_epub_viewer");
     channel.setMethodCallHandler(new EpubViewerPlugin());
 
   }
