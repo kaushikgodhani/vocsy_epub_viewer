@@ -24,7 +24,7 @@ class EpubLocator {
     data['href'] = this.href;
     data['created'] = this.created;
     if (this.locations != null) {
-      data['locations'] = this.locations?.toJson();
+      data['locations'] = this.locations!.toJson();
     }
     return data;
   }

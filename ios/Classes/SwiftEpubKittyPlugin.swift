@@ -13,7 +13,7 @@ public class SwiftEpubViewerPlugin: NSObject, FlutterPlugin,FolioReaderPageDeleg
     
     //12.13
     public static func register(with registrar: FlutterPluginRegistrar) {
-      let channel = FlutterMethodChannel(name: "epub_viewer", binaryMessenger: registrar.messenger())
+      let channel = FlutterMethodChannel(name: "vocsy_epub_viewer", binaryMessenger: registrar.messenger())
       let instance = SwiftEpubViewerPlugin()
         
       pageChannel = FlutterEventChannel.init(name: "page",

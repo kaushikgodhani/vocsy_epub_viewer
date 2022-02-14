@@ -109,7 +109,7 @@ EpubViewer.locatorStream.listen((locator) {
 });
  ```
 
-Check the [Sample](https://github.com/JideGuru/epub_viewer/tree/master/example) project or [this ebook app](https://github.com/JideGuru/FlutterEbookApp) for implementation
+Check the [Sample](https://github.com/vocsy/epub_viewer/tree/master/example) project or [this ebook app](https://github.com/vocsy/FlutterEbookApp) for implementation
 ## Issues
 
 If you encounter any problems feel free to open an issue. If you feel the library is
