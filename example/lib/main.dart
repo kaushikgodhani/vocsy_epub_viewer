@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -19,15 +18,16 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool loading = false;
   Dio dio = new Dio();
+  String filePath = "";
 
   @override
   void initState() {
     super.initState();
-//    download();
+    download();
   }
 
   download() async {
-    if (Platform.isIOS) {
+    if (Platform.isAndroid || Platform.isIOS) {
       print('download');
       await downloadFile();
     } else {
@@ -61,20 +61,14 @@ class _MyAppState extends State<MyApp> {
                         allowSharing: true,
                         enableTts: true,
                         nightMode: true);
-//                    EpubViewer.open(
-//                      Platform.isAndroid ? androidBookPath : iosBookPath,
-//                      lastLocation: EpubLocator.fromJson({
-//                        "bookId": "2239",
-//                        "href": "/OEBPS/ch06.xhtml",
-//                        "created": 1539934158390,
-//                        "locations": {
-//                          "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
-//                        }
-//                      }),
-//                    );
 
-                    await EpubViewer.openAsset(
-                      'assets/4.epub',
+                    // get current locator
+                    EpubViewer.locatorStream.listen((locator) {
+                      print('LOCATOR: ${locator}');
+                    });
+
+                    EpubViewer.open(
+                      filePath,
                       lastLocation: EpubLocator.fromJson({
                         "bookId": "2239",
                         "href": "/OEBPS/ch06.xhtml",
@@ -84,11 +78,18 @@ class _MyAppState extends State<MyApp> {
                         }
                       }),
                     );
-                    // get current locator
-                    EpubViewer.locatorStream.listen((locator) {
-                      print(
-                          'LOCATOR: ${EpubLocator.fromJson(jsonDecode(locator))}');
-                    });
+
+                    // await EpubViewer.openAsset(
+                    //   'assets/4.epub',
+                    //   lastLocation: EpubLocator.fromJson({
+                    //     "bookId": "2239",
+                    //     "href": "/OEBPS/ch06.xhtml",
+                    //     "created": 1539934158390,
+                    //     "locations": {
+                    //       "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
+                    //     }
+                    //   }),
+                    // );
                   },
                   child: Container(
                     child: Text('open epub'),
@@ -131,13 +132,17 @@ class _MyAppState extends State<MyApp> {
           //Check if download is complete and close the alert dialog
           if (receivedBytes == totalBytes) {
             loading = false;
-            setState(() {});
+            setState(() {
+              filePath = path;
+            });
           }
         },
       );
     } else {
       loading = false;
-      setState(() {});
+      setState(() {
+        filePath = path;
+      });
     }
   }
 }

@@ -1,3 +1,7 @@
+## 0.0.8
+
+* Bug Fixed for Locator in android
+
 ## 0.0.7
 
 * Bug Fixed for Android
