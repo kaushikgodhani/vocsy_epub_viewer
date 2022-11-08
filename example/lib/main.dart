@@ -28,7 +28,6 @@ class _MyAppState extends State<MyApp> {
 
   download() async {
     if (Platform.isAndroid || Platform.isIOS) {
-      print('download');
       await downloadFile();
     } else {
       loading = false;
@@ -38,33 +37,32 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Vocsy Plugin example app'),
+          title: const Text('Vocsy Plugin E-pub example'),
         ),
         body: Center(
           child: loading
               ? CircularProgressIndicator()
-              : FlatButton(
+              : ElevatedButton(
                   onPressed: () async {
-                    Directory appDocDir =
-                        await getApplicationDocumentsDirectory();
-                    print('$appDocDir');
-
+                    Directory appDocDir = await getApplicationDocumentsDirectory();
                     String iosBookPath = '${appDocDir.path}/chair.epub';
                     print(iosBookPath);
                     String androidBookPath = 'file:///android_asset/3.epub';
                     EpubViewer.setConfig(
-                        themeColor: Theme.of(context).primaryColor,
-                        identifier: "iosBook",
-                        scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
-                        allowSharing: true,
-                        enableTts: true,
-                        nightMode: true);
+                      themeColor: Theme.of(context).primaryColor,
+                      identifier: "iosBook",
+                      scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
+                      allowSharing: true,
+                      enableTts: true,
+                      nightMode: true,
+                    );
 
                     // get current locator
                     EpubViewer.locatorStream.listen((locator) {
-                      print('LOCATOR: ${locator}');
+                      print('LOCATOR: $locator');
                     });
 
                     EpubViewer.open(
@@ -73,12 +71,9 @@ class _MyAppState extends State<MyApp> {
                         "bookId": "2239",
                         "href": "/OEBPS/ch06.xhtml",
                         "created": 1539934158390,
-                        "locations": {
-                          "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
-                        }
+                        "locations": {"cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"}
                       }),
                     );
-
                     // await EpubViewer.openAsset(
                     //   'assets/4.epub',
                     //   lastLocation: EpubLocator.fromJson({
@@ -91,9 +86,7 @@ class _MyAppState extends State<MyApp> {
                     //   }),
                     // );
                   },
-                  child: Container(
-                    child: Text('open epub'),
-                  ),
+                  child: Text('Open E-pub'),
                 ),
         ),
       ),
@@ -101,8 +94,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future downloadFile() async {
-    print('download1');
-
     if (await Permission.storage.isGranted) {
       await Permission.storage.request();
       await startDownload();
@@ -112,13 +103,10 @@ class _MyAppState extends State<MyApp> {
   }
 
   startDownload() async {
-    Directory? appDocDir = Platform.isAndroid
-        ? await getExternalStorageDirectory()
-        : await getApplicationDocumentsDirectory();
+    Directory? appDocDir = Platform.isAndroid ? await getExternalStorageDirectory() : await getApplicationDocumentsDirectory();
 
     String path = appDocDir!.path + '/chair.epub';
     File file = File(path);
-//    await file.delete();
 
     if (!File(path).existsSync()) {
       await file.create();
@@ -129,7 +117,6 @@ class _MyAppState extends State<MyApp> {
         deleteOnError: true,
         onReceiveProgress: (receivedBytes, totalBytes) {
           print((receivedBytes / totalBytes * 100).toStringAsFixed(0));
-          //Check if download is complete and close the alert dialog
           if (receivedBytes == totalBytes) {
             loading = false;
             setState(() {
