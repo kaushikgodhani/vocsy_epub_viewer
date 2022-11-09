@@ -12,6 +12,7 @@
     <application
         android:name="${applicationName}"
         android:label="example"
+        android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:icon="@mipmap/ic_launcher"
         tools:replace="android:name"

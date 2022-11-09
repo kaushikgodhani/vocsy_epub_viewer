@@ -10,9 +10,9 @@ PODS:
   - Flutter (1.0.0)
   - FontBlaster (5.1.1)
   - MenuItemKit (4.0.1)
-  - path_provider (0.0.1):
+  - path_provider_ios (0.0.1):
     - Flutter
-  - "permission_handler (5.1.0+2)":
+  - permission_handler_apple (9.0.4):
     - Flutter
   - Realm (5.5.1):
     - Realm/Headers (= 5.5.1)
@@ -27,8 +27,8 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - path_provider (from `.symlinks/plugins/path_provider/ios`)
-  - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
+  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - vocsy_epub_viewer (from `.symlinks/plugins/vocsy_epub_viewer/ios`)
 
 SPEC REPOS:
@@ -45,27 +45,27 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  path_provider:
-    :path: ".symlinks/plugins/path_provider/ios"
-  permission_handler:
-    :path: ".symlinks/plugins/permission_handler/ios"
+  path_provider_ios:
+    :path: ".symlinks/plugins/path_provider_ios/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
   vocsy_epub_viewer:
     :path: ".symlinks/plugins/vocsy_epub_viewer/ios"
 
 SPEC CHECKSUMS:
   AEXML: 2fbb73d8724797ed2cde888731e176fa4d44dd83
   EpubViewerKit: 5f6c8ff9161bba18d6742c59b3c575c19f0623a9
-  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   FontBlaster: 8897ebdbb4b6ace3ab78c92b665d88c954f19e4a
   MenuItemKit: 1459920e984d823e1bcc858b7a964f94e6bfa0f6
-  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
-  permission_handler: ccb20a9fad0ee9b1314a52b70b76b473c5f8dab0
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
+  permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
   Realm: c2ffe0667f9c98c9ba65f608ba85684d39826145
   RealmSwift: 5a35c1c35c3e1925e6fcd092c881d5cc4a826bff
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   vocsy_epub_viewer: ad1cbdb60cb1b9785bea193418250b82caf15fa8
   ZFDragableModalTransition: 0d294eaaba6edfcb9839595de765f9ca06a4b524
 
-PODFILE CHECKSUM: a75497545d4391e2d394c3668e20cfb1c2bbd4aa
+PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
