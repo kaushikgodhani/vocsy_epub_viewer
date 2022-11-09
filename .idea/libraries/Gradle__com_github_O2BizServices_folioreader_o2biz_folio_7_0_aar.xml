@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.O2BizServices:folioreader:o2biz-folio-7.0@aar" type="AndroidModuleLibraryType">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3db6dd17b7990f5a469d7bd3ce843335/jetified-folioreader-o2biz-folio-7.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3db6dd17b7990f5a469d7bd3ce843335/jetified-folioreader-o2biz-folio-7.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

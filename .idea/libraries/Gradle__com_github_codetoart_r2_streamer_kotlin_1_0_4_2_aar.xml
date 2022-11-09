@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.codetoart:r2-streamer-kotlin:1.0.4-2@aar" type="AndroidModuleLibraryType">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2335c1464b645700ea5966fdbdc203dc/jetified-r2-streamer-kotlin-1.0.4-2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2335c1464b645700ea5966fdbdc203dc/jetified-r2-streamer-kotlin-1.0.4-2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
