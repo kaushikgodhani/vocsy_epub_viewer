@@ -47,7 +47,8 @@ class _MyAppState extends State<MyApp> {
               ? CircularProgressIndicator()
               : ElevatedButton(
                   onPressed: () async {
-                    Directory appDocDir = await getApplicationDocumentsDirectory();
+                    Directory appDocDir =
+                        await getApplicationDocumentsDirectory();
                     String iosBookPath = '${appDocDir.path}/chair.epub';
                     print(iosBookPath);
                     String androidBookPath = 'file:///android_asset/3.epub';
@@ -71,11 +72,13 @@ class _MyAppState extends State<MyApp> {
                         "bookId": "2239",
                         "href": "/OEBPS/ch06.xhtml",
                         "created": 1539934158390,
-                        "locations": {"cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"}
+                        "locations": {
+                          "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
+                        }
                       }),
                     );
                     // await EpubViewer.openAsset(
-                    //   'assets/4.epub',
+                    //   'assets/3.epub',
                     //   lastLocation: EpubLocator.fromJson({
                     //     "bookId": "2239",
                     //     "href": "/OEBPS/ch06.xhtml",
@@ -103,7 +106,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   startDownload() async {
-    Directory? appDocDir = Platform.isAndroid ? await getExternalStorageDirectory() : await getApplicationDocumentsDirectory();
+    Directory? appDocDir = Platform.isAndroid
+        ? await getExternalStorageDirectory()
+        : await getApplicationDocumentsDirectory();
 
     String path = appDocDir!.path + '/chair.epub';
     File file = File(path);
