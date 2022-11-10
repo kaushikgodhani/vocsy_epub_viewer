@@ -90,7 +90,7 @@ shrinkResources false
 **NOTE** Add These Lines In manifest
 
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/img.png" height="500px">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/img.png" >
 </a>&nbsp;&nbsp;
 
 + 1 
