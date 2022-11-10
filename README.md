@@ -69,7 +69,7 @@ shrinkResources false
 NOTE: Add These Lines In manifest
 
 <a href="#screenshots">
-  <img src="https://raw.githubusercontent.com/JideGuru/epub_viewer/master/screenshots/img.png" width="200px">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/img.png" width="200px">
 </a>&nbsp;&nbsp;
 
 ```java
