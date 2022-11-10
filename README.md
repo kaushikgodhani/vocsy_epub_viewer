@@ -69,7 +69,7 @@ shrinkResources false
 NOTE: Add These Lines In manifest
 
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/img.png" width="200px">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/img.png" width="1300px" height="500px">
 </a>&nbsp;&nbsp;
 
 ```java
@@ -83,6 +83,8 @@ NOTE: Add These Lines In manifest
     android:usesCleartextTraffic="true"
     android:requestLegacyExternalStorage="true"
     android:networkSecurityConfig="@xml/network_security_config"
+
+     android:exported="true"
 
 ```
 
