@@ -90,23 +90,26 @@ shrinkResources false
 NOTE: Add These Lines In manifest
 
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/img.png" width="1300px" height="500px">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/img.png" height="500px">
 </a>&nbsp;&nbsp;
 
++ 1 
 ```java
-
     <uses-permission android:name="android.permission.INTERNET" />
-    
-   
+```    
++ 2 
+ ```java  
     xmlns:tools="http://schemas.android.com/tools"
-    
-    
+ ```
++ 3 
+ ```java  
     android:usesCleartextTraffic="true"
     android:requestLegacyExternalStorage="true"
     android:networkSecurityConfig="@xml/network_security_config"
-
-     android:exported="true"
-
+```
++ 4 
+ ```java  
+    android:exported="true"
 ```
 
 NOTE: `android` -> `app` -> `src` -> `main` -> `res` -> `xml` Inside xml Folder create xml file [network_security_config.xml](https://github.com/kaushikgodhani/vocsy_epub_viewer/tree/main/example/android/app/src/main/res/xml)
