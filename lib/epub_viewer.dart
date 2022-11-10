@@ -11,7 +11,7 @@ part 'model/enum/epub_scroll_direction.dart';
 part 'model/epub_locator.dart';
 part 'utils/util.dart';
 
-class EpubViewer {
+class VocsyEpub {
   static const MethodChannel _channel = const MethodChannel('vocsy_epub_viewer');
   static const EventChannel _pageChannel = const EventChannel('page');
 

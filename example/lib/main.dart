@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool loading = false;
-  Dio dio = new Dio();
+  Dio dio = Dio();
   String filePath = "";
 
   @override
@@ -44,13 +44,20 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: loading
-              ? CircularProgressIndicator()
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircularProgressIndicator(),
+                    Text('Downloading.... E-pub'),
+                  ],
+                )
               : Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
                       onPressed: () async {
-                        EpubViewer.setConfig(
+                        print("=====filePath======$filePath");
+                        VocsyEpub.setConfig(
                           themeColor: Theme.of(context).primaryColor,
                           identifier: "iosBook",
                           scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
@@ -60,11 +67,11 @@ class _MyAppState extends State<MyApp> {
                         );
 
                         // get current locator
-                        EpubViewer.locatorStream.listen((locator) {
+                        VocsyEpub.locatorStream.listen((locator) {
                           print('LOCATOR: $locator');
                         });
 
-                        EpubViewer.open(
+                        VocsyEpub.open(
                           filePath,
                           lastLocation: EpubLocator.fromJson({
                             "bookId": "2239",
@@ -78,7 +85,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        EpubViewer.setConfig(
+                        VocsyEpub.setConfig(
                           themeColor: Theme.of(context).primaryColor,
                           identifier: "iosBook",
                           scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
@@ -87,10 +94,10 @@ class _MyAppState extends State<MyApp> {
                           nightMode: true,
                         );
                         // get current locator
-                        EpubViewer.locatorStream.listen((locator) {
+                        VocsyEpub.locatorStream.listen((locator) {
                           print('LOCATOR: $locator');
                         });
-                        await EpubViewer.openAsset(
+                        await VocsyEpub.openAsset(
                           'assets/4.epub',
                           lastLocation: EpubLocator.fromJson({
                             "bookId": "2239",
@@ -132,17 +139,19 @@ class _MyAppState extends State<MyApp> {
         deleteOnError: true,
         onReceiveProgress: (receivedBytes, totalBytes) {
           print((receivedBytes / totalBytes * 100).toStringAsFixed(0));
-          if (receivedBytes == totalBytes) {
-            loading = false;
-            setState(() {
-              filePath = path;
-            });
-          }
+          setState(() {
+            loading = true;
+          });
         },
-      );
+      ).whenComplete(() {
+        setState(() {
+          loading = false;
+          filePath = path;
+        });
+      });
     } else {
-      loading = false;
       setState(() {
+        loading = false;
         filePath = path;
       });
     }

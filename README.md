@@ -79,7 +79,7 @@ dependencies:
   vocsy_epub_viewer: latest_version
 ```
 
-NOTE: Please add this to the release build type in your app build.gradle to avoid crashes on android
+**NOTE** Please add this to the release build type in your app build.gradle to avoid crashes on android
 release builds
 
 ```
@@ -87,7 +87,7 @@ minifyEnabled false
 shrinkResources false
 ```
 
-NOTE: Add These Lines In manifest
+**NOTE** Add These Lines In manifest
 
 <a href="#screenshots">
   <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/img.png" height="500px">
@@ -112,7 +112,7 @@ NOTE: Add These Lines In manifest
     android:exported="true"
 ```
 
-NOTE: `android` -> `app` -> `src` -> `main` -> `res` -> `xml` Inside xml Folder create xml file [network_security_config.xml](https://github.com/kaushikgodhani/vocsy_epub_viewer/tree/main/example/android/app/src/main/res/xml)
+**NOTE** `android` -> `app` -> `src` -> `main` -> `res` -> `xml` Inside xml Folder create xml file [network_security_config.xml](https://github.com/kaushikgodhani/vocsy_epub_viewer/tree/main/example/android/app/src/main/res/xml)
 ## Usage
 
 ```dart
@@ -171,8 +171,7 @@ VocsyEpub.locatorStream.listen((locator) {
 });
 
  ```
-Check the [Sample](https://github.com/vocsy/epub_viewer/tree/master/example) project
-or [this ebook app](https://github.com/vocsy/FlutterEbookApp) for implementation
+Check the [Example](https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/example/lib/main.dart) for implementation
 
 ## Issues
 
