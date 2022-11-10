@@ -24,10 +24,45 @@ android.
 
 ## ScreenShots
 
++ Light
+
 <a href="#screenshots">
   <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S1.jpg" width="200px">
 </a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S3.jpg" width="200px">
+</a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S11.jpg" width="200px">
+</a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S4.jpg" width="200px">
+</a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S5.jpg" width="200px">
+</a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S6.jpg" width="200px">
+</a>&nbsp;&nbsp;
 
++ Dark
+
+
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S2.jpg" width="200px">
+</a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S7.jpg" width="200px">
+</a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S8.jpg" width="200px">
+</a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S9.jpg" width="200px">
+</a>&nbsp;&nbsp;
+<a href="#screenshots">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S10.jpg" width="200px">
+</a>&nbsp;&nbsp;
 
 ## Install
 
@@ -99,7 +134,7 @@ EpubViewer.open(
 	   "created": 1539934158390,
 	   "locations": {
 		"cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
-	       }
+	          }
 	    }), // first page will open up if the value is null
         );
 
