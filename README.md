@@ -116,7 +116,7 @@ NOTE: `android` -> `app` -> `src` -> `main` -> `res` -> `xml` Inside xml Folder 
 ## Usage
 
 ```dart
-EpubViewer.setConfig(
+VocsyEpub.setConfig(
            themeColor: Theme.of(context).primaryColor,
            identifier: "iosBook",
            scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
@@ -129,7 +129,7 @@ EpubViewer.setConfig(
  * @bookPath
  * @lastLocation (optional and only android)
  */
-EpubViewer.open(
+VocsyEpub.open(
           'bookPath',
            lastLocation: EpubLocator.fromJson({
 	   "bookId": "2239",
@@ -143,7 +143,7 @@ EpubViewer.open(
 
 // Get locator which you can save in your database
 
-EpubViewer.locatorStream.listen((locator) {
+VocsyEpub.locatorStream.listen((locator) {
 	print('LOCATOR: ${EpubLocator.fromJson(jsonDecode(locator))}');
 	// convert locator from string to json and save to your database to be retrieved later
 });
@@ -152,7 +152,7 @@ EpubViewer.locatorStream.listen((locator) {
 You can also load epub from your assets using `EpubViewer.openAsset()`
 
 ```dart
-await EpubViewer.openAsset('assets/3.epub',
+await VocsyEpub.openAsset('assets/3.epub',
 lastLocation: EpubLocator.fromJson({
 	"bookId": "2239",
 	"href": "/OEBPS/ch06.xhtml",
@@ -165,7 +165,7 @@ lastLocation: EpubLocator.fromJson({
 
 // Get locator which you can save in your database
 
-EpubViewer.locatorStream.listen((locator) {
+VocsyEpub.locatorStream.listen((locator) {
 	print('LOCATOR: ${EpubLocator.fromJson(jsonDecode(locator))}');
 	// convert locator from string to json and save to your database to be retrieved later
 });
