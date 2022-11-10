@@ -22,8 +22,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    super.initState();
     download();
+    super.initState();
   }
 
   download() async {
@@ -45,51 +45,64 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: loading
               ? CircularProgressIndicator()
-              : ElevatedButton(
-                  onPressed: () async {
-                    Directory appDocDir =
-                        await getApplicationDocumentsDirectory();
-                    String iosBookPath = '${appDocDir.path}/chair.epub';
-                    print(iosBookPath);
-                    String androidBookPath = 'file:///android_asset/3.epub';
-                    EpubViewer.setConfig(
-                      themeColor: Theme.of(context).primaryColor,
-                      identifier: "iosBook",
-                      scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
-                      allowSharing: true,
-                      enableTts: true,
-                      nightMode: true,
-                    );
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () async {
+                        EpubViewer.setConfig(
+                          themeColor: Theme.of(context).primaryColor,
+                          identifier: "iosBook",
+                          scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
+                          allowSharing: true,
+                          enableTts: true,
+                          nightMode: true,
+                        );
 
-                    // get current locator
-                    EpubViewer.locatorStream.listen((locator) {
-                      print('LOCATOR: $locator');
-                    });
+                        // get current locator
+                        EpubViewer.locatorStream.listen((locator) {
+                          print('LOCATOR: $locator');
+                        });
 
-                    EpubViewer.open(
-                      filePath,
-                      lastLocation: EpubLocator.fromJson({
-                        "bookId": "2239",
-                        "href": "/OEBPS/ch06.xhtml",
-                        "created": 1539934158390,
-                        "locations": {
-                          "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
-                        }
-                      }),
-                    );
-                    // await EpubViewer.openAsset(
-                    //   'assets/3.epub',
-                    //   lastLocation: EpubLocator.fromJson({
-                    //     "bookId": "2239",
-                    //     "href": "/OEBPS/ch06.xhtml",
-                    //     "created": 1539934158390,
-                    //     "locations": {
-                    //       "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
-                    //     }
-                    //   }),
-                    // );
-                  },
-                  child: Text('Open E-pub'),
+                        EpubViewer.open(
+                          filePath,
+                          lastLocation: EpubLocator.fromJson({
+                            "bookId": "2239",
+                            "href": "/OEBPS/ch06.xhtml",
+                            "created": 1539934158390,
+                            "locations": {"cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"}
+                          }),
+                        );
+                      },
+                      child: Text('Open Online E-pub'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () async {
+                        EpubViewer.setConfig(
+                          themeColor: Theme.of(context).primaryColor,
+                          identifier: "iosBook",
+                          scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
+                          allowSharing: true,
+                          enableTts: true,
+                          nightMode: true,
+                        );
+                        // get current locator
+                        EpubViewer.locatorStream.listen((locator) {
+                          print('LOCATOR: $locator');
+                        });
+                        await EpubViewer.openAsset(
+                          'assets/4.epub',
+                          lastLocation: EpubLocator.fromJson({
+                            "bookId": "2239",
+                            "href": "/OEBPS/ch06.xhtml",
+                            "created": 1539934158390,
+                            "locations": {"cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"}
+                          }),
+                        );
+                      },
+                      child: Text('Open Assets E-pub'),
+                    ),
+                  ],
                 ),
         ),
       ),
@@ -106,9 +119,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   startDownload() async {
-    Directory? appDocDir = Platform.isAndroid
-        ? await getExternalStorageDirectory()
-        : await getApplicationDocumentsDirectory();
+    Directory? appDocDir = Platform.isAndroid ? await getExternalStorageDirectory() : await getApplicationDocumentsDirectory();
 
     String path = appDocDir!.path + '/chair.epub';
     File file = File(path);
@@ -116,8 +127,7 @@ class _MyAppState extends State<MyApp> {
     if (!File(path).existsSync()) {
       await file.create();
       await dio.download(
-        'https://github.com/FolioReader/FolioReaderKit/raw/master/Example/'
-        'Shared/Sample%20eBooks/The%20Silver%20Chair.epub',
+        "https://vocsyinfotech.in/envato/cc/flutter_ebook/uploads/22566_The-Racketeer---John-Grisham.epub",
         path,
         deleteOnError: true,
         onReceiveProgress: (receivedBytes, totalBytes) {
