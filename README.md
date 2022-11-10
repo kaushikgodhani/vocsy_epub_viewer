@@ -25,23 +25,9 @@ android.
 ## ScreenShots
 
 <a href="#screenshots">
-  <img src="https://raw.githubusercontent.com/JideGuru/epub_viewer/master/screenshots/1.png" width="200px">
+  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S1.jpg" width="200px">
 </a>&nbsp;&nbsp;
-<a href="#screenshots">
-  <img src="https://raw.githubusercontent.com/JideGuru/epub_viewer/master/screenshots/2.png" width="200px">
-</a>&nbsp;&nbsp;
-<a href="#screenshots">
-  <img src="https://raw.githubusercontent.com/JideGuru/epub_viewer/master/screenshots/3.png" width="200px">
-</a>&nbsp;&nbsp;
-<a href="#screenshots">
-  <img src="https://raw.githubusercontent.com/JideGuru/epub_viewer/master/screenshots/4.png" width="200px">
-</a>&nbsp;&nbsp;
-<a href="#screenshots">
-  <img src="https://raw.githubusercontent.com/JideGuru/epub_viewer/master/screenshots/5.png" width="200px">
-</a>&nbsp;&nbsp;
-<a href="#screenshots">
-  <img src="https://raw.githubusercontent.com/JideGuru/epub_viewer/master/screenshots/6.png" width="200px">
-</a>&nbsp;&nbsp;
+
 
 ## Install
 
