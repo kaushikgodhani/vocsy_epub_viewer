@@ -80,7 +80,7 @@ NOTE: Add Those Three Lines In manifest
 
 NOTE: `android` -> `app` -> `src` -> `main` -> `res` -> `xml` Inside xml Folder create xml file [network_security_config.xml]
 
-[Link](https://github.com/kaushikgodhani/vocsy_epub_viewer.git)
+[network_security_config.xml](https://github.com/kaushikgodhani/vocsy_epub_viewer/tree/main/example/android/app/src/main/res/xml)
 ## Usage
 
 ```dart
