@@ -66,21 +66,27 @@ minifyEnabled false
 shrinkResources false
 ```
 
-NOTE: Add Those Three Lines In manifest
+NOTE: Add These Lines In manifest
+
+<a href="#screenshots">
+  <img src="https://raw.githubusercontent.com/JideGuru/epub_viewer/master/screenshots/img.png" width="200px">
+</a>&nbsp;&nbsp;
 
 ```java
-<application
-        android:name="${applicationName}"
-        ....
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true"
-        android:networkSecurityConfig="@xml/network_security_config"
-</application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+   
+    xmlns:tools="http://schemas.android.com/tools"
+    
+    
+    android:usesCleartextTraffic="true"
+    android:requestLegacyExternalStorage="true"
+    android:networkSecurityConfig="@xml/network_security_config"
+
 ```
 
-NOTE: `android` -> `app` -> `src` -> `main` -> `res` -> `xml` Inside xml Folder create xml file [network_security_config.xml]
-
-[network_security_config.xml](https://github.com/kaushikgodhani/vocsy_epub_viewer/tree/main/example/android/app/src/main/res/xml)
+NOTE: `android` -> `app` -> `src` -> `main` -> `res` -> `xml` Inside xml Folder create xml file [network_security_config.xml](https://github.com/kaushikgodhani/vocsy_epub_viewer/tree/main/example/android/app/src/main/res/xml)
 ## Usage
 
 ```dart
