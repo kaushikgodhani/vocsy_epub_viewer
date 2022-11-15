@@ -25,43 +25,42 @@ android.
 ## ScreenShots
 
 + Light
-
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S1.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S1.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S3.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S3.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S11.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S11.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S4.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S4.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S5.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S5.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S6.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S6.jpg" width="200px">
 </a>&nbsp;&nbsp;
 
 + Dark
 
 
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S2.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S2.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S7.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S7.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S8.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S8.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S9.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S9.jpg" width="200px">
 </a>&nbsp;&nbsp;
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/S10.jpg" width="200px">
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/S10.jpg" width="200px">
 </a>&nbsp;&nbsp;
 
 ## Install
@@ -90,7 +89,7 @@ shrinkResources false
 **NOTE** Add These Lines In manifest
 
 <a href="#screenshots">
-  <img src="https://github.com/kaushikgodhani/vocsy_epub_viewer/blob/main/screenshots/img.png" >
+  <img src="https://raw.githubusercontent.com/kaushikgodhani/vocsy_epub_viewer/main/screenshots/img.png" >
 </a>&nbsp;&nbsp;
 
 + 1 
