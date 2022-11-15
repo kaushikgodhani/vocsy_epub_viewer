@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'vocsy_epub_viewer'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A Vocsy epub reader flutter plugin project.'
   s.description      = <<-DESC
 A new flutter plugin project.
