@@ -1,3 +1,9 @@
+## 1.0.0
+* IOS ISSUE FIXED!!
+* LATEST ANDROID VERSION SUPPORT!
+* ANDROID 12 SUPPORTED !
+* STABLE VERSION
+
 ## 0.0.8
 
 * Bug Fixed for Locator in android
