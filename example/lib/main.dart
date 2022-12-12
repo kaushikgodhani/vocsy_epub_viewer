@@ -28,7 +28,12 @@ class _MyAppState extends State<MyApp> {
 
   download() async {
     if (Platform.isAndroid || Platform.isIOS) {
-      await downloadFile();
+      if (await Permission.storage.isDenied) {
+        await Permission.storage.request();
+        await startDownload();
+      } else {
+        await startDownload();
+      }
     } else {
       loading = false;
     }
@@ -116,15 +121,6 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Future downloadFile() async {
-    if (await Permission.storage.isGranted) {
-      await Permission.storage.request();
-      await startDownload();
-    } else {
-      await startDownload();
-    }
-  }
-
   startDownload() async {
     Directory? appDocDir = Platform.isAndroid ? await getExternalStorageDirectory() : await getApplicationDocumentsDirectory();
 
@@ -138,7 +134,7 @@ class _MyAppState extends State<MyApp> {
         path,
         deleteOnError: true,
         onReceiveProgress: (receivedBytes, totalBytes) {
-          print((receivedBytes / totalBytes * 100).toStringAsFixed(0));
+          print(((receivedBytes / totalBytes) * 100).toStringAsFixed(0));
           setState(() {
             loading = true;
           });
