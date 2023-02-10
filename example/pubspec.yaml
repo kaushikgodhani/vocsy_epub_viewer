@@ -22,7 +22,8 @@ dev_dependencies:
   vocsy_epub_viewer:
     path: ../
 
-
+dependency_overrides:
+  file: ^6.1.4
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
