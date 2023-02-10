@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:vocsy_epub_viewer/epub_viewer.dart';
 
 void main() async {
@@ -28,12 +27,7 @@ class _MyAppState extends State<MyApp> {
 
   download() async {
     if (Platform.isAndroid || Platform.isIOS) {
-      if (await Permission.storage.isDenied) {
-        await Permission.storage.request();
-        await startDownload();
-      } else {
-        await startDownload();
-      }
+      await downloadFile();
     } else {
       loading = false;
     }
@@ -82,7 +76,9 @@ class _MyAppState extends State<MyApp> {
                             "bookId": "2239",
                             "href": "/OEBPS/ch06.xhtml",
                             "created": 1539934158390,
-                            "locations": {"cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"}
+                            "locations": {
+                              "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
+                            }
                           }),
                         );
                       },
@@ -108,7 +104,9 @@ class _MyAppState extends State<MyApp> {
                             "bookId": "2239",
                             "href": "/OEBPS/ch06.xhtml",
                             "created": 1539934158390,
-                            "locations": {"cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"}
+                            "locations": {
+                              "cfi": "epubcfi(/0!/4/4[simple_book]/2/2/6)"
+                            }
                           }),
                         );
                       },
@@ -121,8 +119,20 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  Future downloadFile() async {
+    /* if (await Permission.storage.isGranted) {
+      await Permission.storage.request();
+      await startDownload();
+    } else*/
+    {
+      await startDownload();
+    }
+  }
+
   startDownload() async {
-    Directory? appDocDir = Platform.isAndroid ? await getExternalStorageDirectory() : await getApplicationDocumentsDirectory();
+    Directory? appDocDir = Platform.isAndroid
+        ? await getExternalStorageDirectory()
+        : await getApplicationDocumentsDirectory();
 
     String path = appDocDir!.path + '/chair.epub';
     File file = File(path);
@@ -134,7 +144,7 @@ class _MyAppState extends State<MyApp> {
         path,
         deleteOnError: true,
         onReceiveProgress: (receivedBytes, totalBytes) {
-          print(((receivedBytes / totalBytes) * 100).toStringAsFixed(0));
+          print((receivedBytes / totalBytes * 100).toStringAsFixed(0));
           setState(() {
             loading = true;
           });
