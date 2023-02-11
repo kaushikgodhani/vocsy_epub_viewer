@@ -21,7 +21,7 @@ android.
 | Multiple Theme [Light / Dark] | ✅ | ❌ |
 | Support Multiple Device Language | ✅ | ✅ |
 | Change FontStyle | ✅ | ❌ |
-| Android 13 Support | ✅ | ❌ |
+| Android 13 Supported | ✅ | ❌ |
 
 ## ScreenShots
 
