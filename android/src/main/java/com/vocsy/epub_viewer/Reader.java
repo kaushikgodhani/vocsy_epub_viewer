@@ -10,7 +10,6 @@ import com.folioreader.FolioReader;
 import com.folioreader.model.HighLight;
 import com.folioreader.model.locators.ReadLocator;
 import com.folioreader.ui.base.OnSaveHighlight;
-import com.folioreader.util.AppUtil;
 import com.folioreader.util.OnHighlightListener;
 import com.folioreader.util.ReadLocatorListener;
 
@@ -25,7 +24,7 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodChannel;
 
-public class Reader implements OnHighlightListener, ReadLocatorListener, FolioReader.OnClosedListener{
+public class Reader implements OnHighlightListener, ReadLocatorListener, FolioReader.OnClosedListener {
 
     private ReaderConfig readerConfig;
     public FolioReader folioReader;
@@ -34,10 +33,10 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
     private EventChannel eventChannel;
     private EventChannel.EventSink pageEventSink;
     private BinaryMessenger messenger;
-    private ReadLocator  read_locator;
+    private ReadLocator read_locator;
     private static final String PAGE_CHANNEL = "sage";
 
-    Reader(Context context, BinaryMessenger messenger, ReaderConfig config, EventChannel.EventSink sink){
+    Reader(Context context, BinaryMessenger messenger, ReaderConfig config, EventChannel.EventSink sink) {
         this.context = context;
         readerConfig = config;
 
@@ -51,7 +50,7 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
         pageEventSink = sink;
     }
 
-    public void open(String bookPath, String lastLocation){
+    public void open(String bookPath, String lastLocation) {
         final String path = bookPath;
         final String location = lastLocation;
         new Thread(new Runnable() {
@@ -59,7 +58,7 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
             public void run() {
                 try {
                     Log.i("SavedLocation", "-> savedLocation -> " + location);
-                    if(location != null && !location.isEmpty()){
+                    if (location != null && !location.isEmpty()) {
                         ReadLocator readLocator = ReadLocator.fromJson(location);
                         folioReader.setReadLocator(readLocator);
                     }
@@ -73,15 +72,15 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
 
     }
 
-    public void close(){
+    public void close() {
         folioReader.close();
     }
 
-    private void setPageHandler(BinaryMessenger messenger){
+    private void setPageHandler(BinaryMessenger messenger) {
 //        final MethodChannel channel = new MethodChannel(registrar.messenger(), "page");
 //        channel.setMethodCallHandler(new EpubKittyPlugin());
-        Log.i("event sink is", "in set page handler:" );
-        eventChannel = new EventChannel(messenger,PAGE_CHANNEL);
+        Log.i("event sink is", "in set page handler:");
+        eventChannel = new EventChannel(messenger, PAGE_CHANNEL);
 
         try {
 
@@ -90,10 +89,10 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
                 @Override
                 public void onListen(Object o, EventChannel.EventSink eventSink) {
 
-                    Log.i("event sink is", "this is eveent sink:" );
+                    Log.i("event sink is", "this is eveent sink:");
 
                     pageEventSink = eventSink;
-                    if(pageEventSink == null) {
+                    if (pageEventSink == null) {
                         Log.i("empty", "Sink is empty");
                     }
                 }
@@ -103,8 +102,7 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
 
                 }
             });
-        }
-        catch (Error err) {
+        } catch (Error err) {
             Log.i("and error", "error is " + err.toString());
         }
     }
@@ -172,7 +170,7 @@ public class Reader implements OnHighlightListener, ReadLocatorListener, FolioRe
     public void onFolioReaderClosed() {
         Log.i("readLocator", "-> saveReadLocator -> " + read_locator.toJson());
 
-        if (pageEventSink != null){
+        if (pageEventSink != null) {
             pageEventSink.success(read_locator.toJson());
         }
     }
