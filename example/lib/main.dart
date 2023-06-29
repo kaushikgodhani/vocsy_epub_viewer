@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vocsy_epub_viewer/epub_viewer.dart';
@@ -17,6 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final platform = MethodChannel('my_channel');
   bool loading = false;
   Dio dio = Dio();
   String filePath = "";
@@ -27,31 +28,54 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
-  download() async {
-    if (Platform.isAndroid || Platform.isIOS) {
+  /// ANDROID VERSION
+  Future<void> fetchAndroidVersion() async {
+    final String? version = await getAndroidVersion();
+    if (version != null) {
       String? firstPart;
-      final deviceInfoPlugin = DeviceInfoPlugin();
-      final deviceInfo = await deviceInfoPlugin.deviceInfo;
-      final allInfo = deviceInfo.data;
-      if (allInfo['version']["release"].toString().contains(".")) {
-        int indexOfFirstDot = allInfo['version']["release"].indexOf(".");
-        firstPart = allInfo['version']["release"].substring(0, indexOfFirstDot);
+      if (version.toString().contains(".")) {
+        int indexOfFirstDot = version.indexOf(".");
+        firstPart = version.substring(0, indexOfFirstDot);
       } else {
-        firstPart = allInfo['version']["release"];
+        firstPart = version;
       }
-      int intValue = int.parse(firstPart!);
+      int intValue = int.parse(firstPart);
       if (intValue >= 13) {
         await startDownload();
       } else {
-        if (await Permission.storage.isGranted) {
-          await Permission.storage.request();
+        final PermissionStatus status = await Permission.storage.request();
+        if (status == PermissionStatus.granted) {
           await startDownload();
         } else {
-          await startDownload();
+          await Permission.storage.request();
         }
       }
+      print("ANDROID VERSION: $intValue");
+    }
+  }
+
+  Future<String?> getAndroidVersion() async {
+    try {
+      final String version = await platform.invokeMethod('getAndroidVersion');
+      return version;
+    } on PlatformException catch (e) {
+      print("FAILED TO GET ANDROID VERSION: ${e.message}");
+      return null;
+    }
+  }
+
+  download() async {
+    if (Platform.isIOS) {
+      final PermissionStatus status = await Permission.storage.request();
+      if (status == PermissionStatus.granted) {
+        await startDownload();
+      } else {
+        await Permission.storage.request();
+      }
+    } else if (Platform.isAndroid) {
+      await fetchAndroidVersion();
     } else {
-      loading = false;
+      PlatformException(code: '500');
     }
   }
 
@@ -142,6 +166,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   startDownload() async {
+    setState(() {
+      loading = true;
+    });
     Directory? appDocDir = Platform.isAndroid ? await getExternalStorageDirectory() : await getApplicationDocumentsDirectory();
 
     String path = appDocDir!.path + '/sample.epub';
@@ -154,6 +181,7 @@ class _MyAppState extends State<MyApp> {
         path,
         deleteOnError: true,
         onReceiveProgress: (receivedBytes, totalBytes) {
+          print('Download --- ${(receivedBytes / totalBytes) * 100}');
           setState(() {
             loading = true;
           });

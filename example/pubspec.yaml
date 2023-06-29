@@ -3,16 +3,15 @@ description: Demonstrates how to use the epub_kitty plugin.
 publish_to: 'none'
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
-  permission_handler: ^10.2.0
-  dio: ^4.0.6
-  path_provider: ^2.0.12
-  device_info_plus: ^8.1.0
+  cupertino_icons: ^1.0.5
+  permission_handler: ^10.3.0
+  dio: ^5.2.1+1
+  path_provider: ^2.0.15
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -23,7 +22,7 @@ dev_dependencies:
     path: ../
 
 dependency_overrides:
-  file: ^6.1.4
+  file: ^7.0.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
