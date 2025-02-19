@@ -1,4 +1,4 @@
-part of 'package:vocsy_epub_viewer/epub_viewer.dart';
+part of 'package:ethiobook_epub_viewer/epub_viewer.dart';
 
 /// Model for android EpubLocator
 class EpubLocator {

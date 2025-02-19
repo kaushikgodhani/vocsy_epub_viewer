@@ -1,4 +1,4 @@
-package com.vocsy.epub_viewer;
+package com.ethiobook.epub_viewer;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -14,24 +14,38 @@ public class ReaderConfig {
     private boolean allowSharing;
     private boolean showTts;
     private boolean nightMode;
+    private boolean sepiaMode;
 
     public Config config;
 
     public ReaderConfig(Context context, String identifier, String themeColor,
-                        String scrollDirection, boolean allowSharing, boolean showTts , boolean nightMode){
+                        String scrollDirection, boolean allowSharing, boolean showTts, 
+                        boolean nightMode, boolean sepiaMode) {
 
-//        config = AppUtil.getSavedConfig(context);
-//        if (config == null)
-            config = new Config();
-        if (scrollDirection.equals("vertical")){
+        // Initialize the FolioReader Config
+        config = new Config();
+
+        // Set scroll direction
+        if (scrollDirection.equals("vertical")) {
             config.setAllowedDirection(Config.AllowedDirection.ONLY_VERTICAL);
-        }else if(scrollDirection.equals("horizontal")){
+        } else if (scrollDirection.equals("horizontal")) {
             config.setAllowedDirection(Config.AllowedDirection.ONLY_HORIZONTAL);
-        }else{
+        } else {
             config.setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL);
         }
-        config.setThemeColorInt(Color.parseColor(themeColor));
-        config.setNightThemeColorInt(Color.parseColor(themeColor));
+
+        // Set theme colors
+        int color = Color.parseColor(themeColor);
+        config.setThemeColorInt(color); // Day mode color
+        config.setNightThemeColorInt(color); // Night mode color
+
+        // Set sepia mode
+        if (sepiaMode) {
+            config.setThemeColorInt(Color.parseColor("#F4ECD8")); // Sepia background color
+            config.setNightThemeColorInt(Color.parseColor("#5E462B")); // Sepia text color
+        }
+
+        // Set other configurations
         config.setShowRemainingIndicator(true);
         config.setShowTts(showTts);
         config.setNightMode(nightMode);

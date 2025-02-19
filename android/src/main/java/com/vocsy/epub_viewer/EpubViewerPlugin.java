@@ -1,4 +1,4 @@
-package com.vocsy.epub_viewer;
+package com.ethiobook.epub_viewer;
 
 import android.app.Activity;
 import android.content.Context;
@@ -34,7 +34,7 @@ public class EpubViewerPlugin implements MethodCallHandler, FlutterPlugin, Activ
     static BinaryMessenger messenger;
     static private EventChannel eventChannel;
     static private EventChannel.EventSink sink;
-    private static final String channelName = "vocsy_epub_viewer";
+    private static final String channelName = "ethiobook_epub_viewer";
 
     /**
      * Plugin registration.
@@ -62,7 +62,7 @@ public class EpubViewerPlugin implements MethodCallHandler, FlutterPlugin, Activ
         });
 
 
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), "vocsy_epub_viewer");
+        final MethodChannel channel = new MethodChannel(registrar.messenger(), "ethiobook_epub_viewer");
         channel.setMethodCallHandler(new EpubViewerPlugin());
 
     }
@@ -125,10 +125,11 @@ public class EpubViewerPlugin implements MethodCallHandler, FlutterPlugin, Activ
             String themeColor = arguments.get("themeColor").toString();
             String scrollDirection = arguments.get("scrollDirection").toString();
             Boolean nightMode = Boolean.parseBoolean(arguments.get("nightMode").toString());
+            Boolean sepiaMode = Boolean.parseBoolean(arguments.get("sepiaMode").toString());
             Boolean allowSharing = Boolean.parseBoolean(arguments.get("allowSharing").toString());
             Boolean enableTts = Boolean.parseBoolean(arguments.get("enableTts").toString());
             config = new ReaderConfig(context, identifier, themeColor,
-                    scrollDirection, allowSharing, enableTts, nightMode);
+                    scrollDirection, allowSharing, enableTts, nightMode, sepiaMode);
 
         } else if (call.method.equals("open")) {
 

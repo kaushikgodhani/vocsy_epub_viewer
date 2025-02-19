@@ -13,7 +13,7 @@ public class SwiftEpubViewerPlugin: NSObject, FlutterPlugin,FolioReaderPageDeleg
     
     //12.13
     public static func register(with registrar: FlutterPluginRegistrar) {
-      let channel = FlutterMethodChannel(name: "vocsy_epub_viewer", binaryMessenger: registrar.messenger())
+      let channel = FlutterMethodChannel(name: "ethiobook_epub_viewer", binaryMessenger: registrar.messenger())
       let instance = SwiftEpubViewerPlugin()
         
       pageChannel = FlutterEventChannel.init(name: "page",
@@ -34,9 +34,10 @@ public class SwiftEpubViewerPlugin: NSObject, FlutterPlugin,FolioReaderPageDeleg
         let allowSharing = arguments["allowSharing"] as! Bool
         let enableTts = arguments["enableTts"] as! Bool
         let nightMode = arguments["nightMode"] as! Bool
+        let sepiaMode = arguments["sepiaMode"] as! Bool
 
         self.config = EpubConfig.init(Identifier: Identifier,tintColor: color,allowSharing:
-            allowSharing,scrollDirection: scrollDirection, enableTts: enableTts, nightMode: nightMode)
+            allowSharing,scrollDirection: scrollDirection, enableTts: enableTts, nightMode: nightMode,sepiaMode: sepiaMode)
 
         break
       case "open":

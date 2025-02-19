@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:vocsy_epub_viewer/epub_viewer.dart';
+import 'package:ethiobook_epub_viewer/epub_viewer.dart';
 
 void main() async {
   runApp(MyApp());
@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Vocsy Plugin E-pub example'),
+          title: const Text('ethiobook Plugin E-pub example'),
         ),
         body: Center(
           child: loading
@@ -105,21 +105,21 @@ class _MyAppState extends State<MyApp> {
                         if (filePath == "") {
                           download();
                         } else {
-                          VocsyEpub.setConfig(
+                          EtBookEpub.setConfig(
                             themeColor: Theme.of(context).primaryColor,
                             identifier: "iosBook",
                             scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
-                            allowSharing: true,
-                            enableTts: true,
+                            // allowSharing: true,
+                            // enableTts: true,
                             nightMode: true,
                           );
 
                           // get current locator
-                          VocsyEpub.locatorStream.listen((locator) {
+                          EtBookEpub.locatorStream.listen((locator) {
                             print('LOCATOR: $locator');
                           });
 
-                          VocsyEpub.open(
+                          EtBookEpub.open(
                             filePath,
                             lastLocation: EpubLocator.fromJson({
                               "bookId": "2239",
@@ -134,7 +134,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        VocsyEpub.setConfig(
+                        EtBookEpub.setConfig(
                           themeColor: Theme.of(context).primaryColor,
                           identifier: "iosBook",
                           scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
@@ -143,10 +143,10 @@ class _MyAppState extends State<MyApp> {
                           nightMode: true,
                         );
                         // get current locator
-                        VocsyEpub.locatorStream.listen((locator) {
+                        EtBookEpub.locatorStream.listen((locator) {
                           print('LOCATOR: $locator');
                         });
-                        await VocsyEpub.openAsset(
+                        await EtBookEpub.openAsset(
                           'assets/4.epub',
                           lastLocation: EpubLocator.fromJson({
                             "bookId": "2239",
@@ -177,7 +177,7 @@ class _MyAppState extends State<MyApp> {
     if (!File(path).existsSync()) {
       await file.create();
       await dio.download(
-        "https://vocsyinfotech.in/envato/cc/flutter_ebook/uploads/22566_The-Racketeer---John-Grisham.epub",
+        "https://github.com/samkiyya/custom_epub_viewer/blob/main/The-Racketeer-John-Grisham.epub",
         path,
         deleteOnError: true,
         onReceiveProgress: (receivedBytes, totalBytes) {

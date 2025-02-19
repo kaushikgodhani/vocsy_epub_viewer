@@ -6,11 +6,11 @@
       <GradleProjectSettings>
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="E:/vocsy_epub_viewer/android" />
+        <option name="externalProjectPath" value="E:/ethiobook_epub_viewer/android" />
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
-            <option value="E:/vocsy_epub_viewer/android" />
+            <option value="E:/ethiobook_epub_viewer/android" />
           </set>
         </option>
       </GradleProjectSettings>

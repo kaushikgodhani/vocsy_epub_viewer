@@ -1,8 +1,8 @@
 <component name="libraryTable">
-  <library name="Gradle: com.github.kaushikgodhani:vocsy_epub_viewer_android_folioreader:V4@aar" type="AndroidModuleLibraryType">
+  <library name="Gradle: com.github.samkiyya:ethiobook_epub_viewer_android_folioreader:V4@aar" type="AndroidModuleLibraryType">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59e8e49ecc117e66dcc50efef60ef1ad/jetified-vocsy_epub_viewer_android_folioreader-V4/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59e8e49ecc117e66dcc50efef60ef1ad/jetified-vocsy_epub_viewer_android_folioreader-V4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59e8e49ecc117e66dcc50efef60ef1ad/jetified-ethiobook_epub_viewer_android_folioreader-V4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/59e8e49ecc117e66dcc50efef60ef1ad/jetified-ethiobook_epub_viewer_android_folioreader-V4/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

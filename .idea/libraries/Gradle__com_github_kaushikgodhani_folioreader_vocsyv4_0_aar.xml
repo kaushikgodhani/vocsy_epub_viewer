@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.github.kaushikgodhani:folioreader:vocsyv4.0@aar" type="AndroidModuleLibraryType">
+  <library name="Gradle: com.github.samkiyya:folioreader:vocsyv4.0@aar" type="AndroidModuleLibraryType">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c1f099dea327e213953da54b415405d/jetified-folioreader-vocsyv4.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c1f099dea327e213953da54b415405d/jetified-folioreader-vocsyv4.0/jars/classes.jar!/" />

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/vocsy_epub_viewer.iml" filepath="$PROJECT_DIR$/.idea/vocsy_epub_viewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ethiobook_epub_viewer.iml" filepath="$PROJECT_DIR$/.idea/ethiobook_epub_viewer.iml" />
     </modules>
   </component>
 </project>

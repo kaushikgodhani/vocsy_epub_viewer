@@ -1,4 +1,4 @@
-package com.vocsy.epub_viewer;
+package com.ethiobook.epub_viewer;
 
 import com.folioreader.model.HighLight;
 
